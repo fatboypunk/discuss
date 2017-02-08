@@ -21,6 +21,16 @@
           <a href="/" class="brand-logo">
             Discussions
           </a>
+
+          <ul class="right">
+            <%= if @conn. assigns[:user] do %>
+            <% else %>
+              <li>
+                <%= link "Sign in with GIthub", to: auth_path(@conn, :request, "github") %>
+              </li>
+
+            <% end %>
+          </ul>
         </div>
       </nav>
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
