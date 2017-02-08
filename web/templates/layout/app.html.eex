@@ -23,13 +23,13 @@
           </a>
 
           <ul class="right">
-            <%= if @conn. assigns[:user] do %>
-            <% else %>
               <li>
+            <%= if @conn. assigns[:user] do %>
+                <%= link "Sign out", to: auth_path(@conn, :signout) %>
+            <% else %>
                 <%= link "Sign in with GIthub", to: auth_path(@conn, :request, "github") %>
-              </li>
-
             <% end %>
+              </li>
           </ul>
         </div>
       </nav>
