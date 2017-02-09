@@ -59,3 +59,10 @@ config :logger, level: :info
 # Finally import the config/prod.secret.exs
 # which should be versioned separately.
 # import_config "prod.secret.exs"
+config :discuss, Discuss.Repo,
+  adapter: Ecto.Adapters.Postgres,
+  # username: System.get_env(""),
+  # password: "postgres",
+  database: "discuss_prod",
+  pool_size: 20
+
